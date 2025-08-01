@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const FloatingElement = ({ delay = 0, children, className = "" }) => (
+const FloatingElement = ({ delay = 0, children, className = "" }: { delay?: number; children: React.ReactNode; className?: string }) => (
   <motion.div
     className={`absolute ${className}`}
     animate={{
