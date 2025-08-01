@@ -22,12 +22,12 @@ const FloatingElement = ({ delay = 0, children, className = "" }: { delay?: numb
   </motion.div>
 );
 
-const AnimatedCounter = ({ end, duration = 2 }) => {
+const AnimatedCounter = ({ end, duration = 2 }: { end: number; duration?: number }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTime = null;
-    const animate = (currentTime) => {
+    let startTime: number | null = null;
+    const animate = (currentTime: number) => {
       if (startTime === null) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
       setCount(Math.floor(progress * end));
